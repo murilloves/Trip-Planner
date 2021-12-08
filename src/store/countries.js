@@ -1,7 +1,8 @@
 import create from "zustand";
+import { CountryFactory } from "../components/organisms/countrySelect/helpers"; 
 
-const useCountryStore = create(set => ({
-  mainCountry: {},
+const countryStore = create(set => ({
+  mainCountry: CountryFactory({}),
   setMainCountry: country => set(() => ({ mainCountry: country })),
 
   favoriteCountries: [],
@@ -11,4 +12,4 @@ const useCountryStore = create(set => ({
   setAllCountries: countries => set(() => ({ allCountries: countries })),
 }));
 
-export default useCountryStore;
+export { countryStore };

@@ -1,17 +1,22 @@
-import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-const LIST_COUNTRIES = gql`
+const GQL_LIST_COUNTRIES = gql`
   {
     countries {
       name
       code
+      capital
+      emoji
+      currency
     }
   }
 `;
 
-const client = new ApolloClient({
+const COUNTRIES_URI = 'https://countries.trevorblades.com'
+
+const countriesClient = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: 'https://countries.trevorblades.com'
+  uri: COUNTRIES_URI
 });
 
-
+export { GQL_LIST_COUNTRIES, countriesClient }
