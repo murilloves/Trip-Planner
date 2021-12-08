@@ -32,8 +32,9 @@ Trip Planner is ready to be deployed!
 ## Project Details:
 
 1 - Countries dashboard where:
-    1.1 - User can select home country
-    1.2 - User can pick 5 countries he wants to visit
+
+	1.1 - User can select home country
+	1.2 - User can pick 5 countries he wants to visit
     1.3 - User can see:
 	    I   NAME OF THEIR HOME COUNTRY AND FAVORITES
 	    II  COUNTRIES CAPITALS
@@ -47,10 +48,11 @@ APIs Used
 
 
 2 - Project setup:
-   2.1 - Create React App (React JS v.17)
-   2.2 - Packages (Apollo for GraphQL, Chakra UI for styling and Zustand for state management)
-   2.3 - Atomic Design for components
-   2.4 - Jest for testing
+
+	2.1 - Create React App (React JS v.17)
+	2.2 - Packages (Apollo for GraphQL, Chakra UI for styling and Zustand for state management)
+	2.3 - Atomic Design for components
+	2.4 - Jest for testing
 
 3 - Services to get the endpoints both GraphQL and Rest
 
