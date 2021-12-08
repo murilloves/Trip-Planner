@@ -28,3 +28,52 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.
 Trip Planner is ready to be deployed!
+
+## Project Details:
+
+1 - Countries dashboard where:
+   1.1 - User can select home country
+   1.2 - User can pick 5 countries he wants to visit
+   1.3 - User can see:
+	1) NAME OF THEIR HOME COUNTRY AND FAVORITES
+	2) COUNTRIES CAPITALS
+	3) CURRENT EXCHANGE RATE AGAINST HOME CURRENCY
+   1.4 - User can Add and Remove Countries from their list
+   1.5 - User can Change Home Country
+
+APIs Used
+* Countries GraphQL API - https://github.com/trevorblades/countries
+* Currency Exchange API - https://www.frankfurter.app/docs/
+
+
+2 - Project setup:
+   2.1 - Create React App (React JS v.17)
+   2.2 - Packages (Apollo for GraphQL, Chakra UI for styling and Zustand for state management)
+   2.3 - Atomic Design for components
+   2.4 - Jest for testing
+
+3 - Services to get the endpoints both GraphQL and Rest
+
+4 - UI / UX, countries flags included, user can Search through input (not just a selector).
+HTML5 Datalist was used for this purpose.
+
+5 - Build the raw Dashboard: select boxes, presentation
+Use https://www.xe.com/currencyconverter as example
+
+6 - Improvements & Features:
+
+    6.1 Separation of concerns for Components and Folders
+    6.2 Responsiveness for mobile
+    6.3 Local Storage for storing the user's Countries (doesn't vanish on page's refresh)
+    6.4 State management for application
+    6.5 Performance Optimization (React JS good practices)
+
+7 - Some unit Tests written for helpers
+
+## Further improvements
+
+8 - Allow user to change currency amount
+
+9 - Use Typescript on the application to prevent errors for Country Object
+
+10 - Increase the showing data using some charts, analysis and more data about the countries
