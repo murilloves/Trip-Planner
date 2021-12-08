@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { useQuery } from '@apollo/client';
 
 import { countryStore } from '../../../store/countries';
-import { GQL_LIST_COUNTRIES, countriesClient } from '../../../services/graphql';
 import { fetchCurrencies } from '../../../services/restapi';
+import { countriesClient, GQL_LIST_COUNTRIES } from '../../../services/graphql';
 
 import { SelectBox } from '../../atoms';
 import {
@@ -27,7 +27,6 @@ import {
   Text
 } from '@chakra-ui/react'
 
-
 const CountrySelect = () => {
   const {data, loading, error} = useQuery(GQL_LIST_COUNTRIES, {client: countriesClient});
   const [rates, setRates] = useState({})
@@ -40,16 +39,6 @@ const CountrySelect = () => {
 
   const favoriteCountries = countryStore(state => state.favoriteCountries)
   const storeFavoriteCountries = countryStore(state => state.setFavoriteCountries)
-
-  useEffect(() => {
-    if (data?.countries) {
-      storeAllCountries(data.countries)
-    }
-  }, [data, storeAllCountries])
-
-  if (loading || error) {
-    return <p>{error ? error.message : 'Loading...'}</p>;
-  }
 
   const onChangeMainCountry = async (value) => {
     const country = getCountry(value, allCountries)
@@ -86,6 +75,24 @@ const CountrySelect = () => {
   const onRemoveFavoriteCountry = index => {
     const updatedFavoriteCountries = favoriteCountries.filter((c, loopIndex) => loopIndex !== index)
     storeFavoriteCountries(updatedFavoriteCountries)
+  }
+
+  useEffect(() => {
+    if (data?.countries) {
+      storeAllCountries(data.countries)
+    }
+  }, [data, storeAllCountries])
+
+  useEffect(() => {
+    async function fetchStoredCurrencies() {
+      const rates = await fetchCurrencies(mainCountry, favoriteCountries)
+      setRates(rates)
+    }
+    fetchStoredCurrencies()
+  }, [mainCountry, favoriteCountries])
+
+  if (loading || error) {
+    return <p>{error ? error.message : 'Loading...'}</p>;
   }
 
   return (
