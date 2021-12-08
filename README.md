@@ -1,3 +1,5 @@
+## Live Link: https://murilloves.github.io/trip-planner/
+
 # Getting Started with Trip Planner
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
