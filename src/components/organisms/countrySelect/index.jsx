@@ -46,8 +46,7 @@ const CountrySelect = () => {
       const updatedMainCountry = CountryFactory(country)
       storeMainCountry(CountryFactory(updatedMainCountry))
 
-      const rates = await fetchCurrencies(updatedMainCountry, favoriteCountries)
-      setRates(rates)
+      updateCurrencies(updatedMainCountry, favoriteCountries)
     }
   }
 
@@ -59,8 +58,7 @@ const CountrySelect = () => {
       updatedFavoriteCountries[index] = CountryFactory(country)
       storeFavoriteCountries(updatedFavoriteCountries)
 
-      const rates = await fetchCurrencies(mainCountry, updatedFavoriteCountries)
-      setRates(rates)
+      updateCurrencies(mainCountry, updatedFavoriteCountries)
     }
   }
 
@@ -77,6 +75,11 @@ const CountrySelect = () => {
     storeFavoriteCountries(updatedFavoriteCountries)
   }
 
+  const updateCurrencies = async (mainCountry, favoriteCountries) => {
+    const rates = await fetchCurrencies(mainCountry, favoriteCountries)
+    setRates(rates)
+  }
+
   useEffect(() => {
     if (data?.countries) {
       storeAllCountries(data.countries)
@@ -84,11 +87,7 @@ const CountrySelect = () => {
   }, [data, storeAllCountries])
 
   useEffect(() => {
-    async function fetchStoredCurrencies() {
-      const rates = await fetchCurrencies(mainCountry, favoriteCountries)
-      setRates(rates)
-    }
-    fetchStoredCurrencies()
+    updateCurrencies(mainCountry, favoriteCountries)
   }, [mainCountry, favoriteCountries])
 
   if (loading || error) {

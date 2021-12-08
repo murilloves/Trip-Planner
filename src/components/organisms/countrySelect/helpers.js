@@ -46,5 +46,6 @@ const composeRateString = (mainCountry, favoriteCountry, rates) => {
 export { MAX_FAVORITE_COUNTRIES }
 export { CountryFactory }
 export { getCountry }
+export { getFirstCurrency }
 export { composeCountryString }
 export { composeRateString }
