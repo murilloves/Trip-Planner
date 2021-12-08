@@ -32,14 +32,14 @@ Trip Planner is ready to be deployed!
 ## Project Details:
 
 1 - Countries dashboard where:
-   1.1 - User can select home country
-   1.2 - User can pick 5 countries he wants to visit
-   1.3 - User can see:
-	1) NAME OF THEIR HOME COUNTRY AND FAVORITES
-	2) COUNTRIES CAPITALS
-	3) CURRENT EXCHANGE RATE AGAINST HOME CURRENCY
-   1.4 - User can Add and Remove Countries from their list
-   1.5 - User can Change Home Country
+    1.1 - User can select home country
+    1.2 - User can pick 5 countries he wants to visit
+    1.3 - User can see:
+	    I   NAME OF THEIR HOME COUNTRY AND FAVORITES
+	    II  COUNTRIES CAPITALS
+	    III CURRENT EXCHANGE RATE AGAINST HOME CURRENCY
+    1.4 - User can Add and Remove Countries from their list
+    1.5 - User can Change Home Country
 
 APIs Used
 * Countries GraphQL API - https://github.com/trevorblades/countries
@@ -57,16 +57,14 @@ APIs Used
 4 - UI / UX, countries flags included, user can Search through input (not just a selector).
 HTML5 Datalist was used for this purpose.
 
-5 - Build the raw Dashboard: select boxes, presentation
-Use https://www.xe.com/currencyconverter as example
+5 - State management for application
 
-6 - Improvements & Features:
+6 - Features:
 
     6.1 Separation of concerns for Components and Folders
     6.2 Responsiveness for mobile
     6.3 Local Storage for storing the user's Countries (doesn't vanish on page's refresh)
-    6.4 State management for application
-    6.5 Performance Optimization (React JS good practices)
+    6.4 Performance Optimization (good React JS practices)
 
 7 - Some unit Tests written for helpers
 
